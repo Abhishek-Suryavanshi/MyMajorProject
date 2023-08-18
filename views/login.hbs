@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> meta}}
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="msg">{{msg}}</div>
+    <h1>Login Page</h1>
+
+    <form action="/login" class="loginLocal" method="POST">
+        <input type="text" placeholder="Enter Username" name="username"><br>
+        <input type="password" placeholder="Enter Password" name="password"><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+
+</html>

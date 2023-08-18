@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> meta}}
+    <title>SignUp</title>
+</head>
+
+<body>
+   
+    <div class="msg">{{msg}}</div>
+    <h1>SignUp Page</h1>
+
+    <form action="/signup" class="loginLocal" method="POST">
+        <input type="text" placeholder="Enter Username" name="username"><br>
+        <input type="password" placeholder="Enter Password" name="password"><br>
+        <button type="submit">SignUp</button>
+    </form>
+</body>
+
+</html>
