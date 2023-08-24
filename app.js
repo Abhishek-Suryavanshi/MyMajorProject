@@ -45,7 +45,7 @@ app.use(passport.session());
 app.get('/', (req, res, next) => {
     // console.log(req.user._id);
     if (req.user) return res.redirect('/shop/profile');
-    return res.redirect('/login');
+    return res.redirect('/main');
 });
 
 app.get('/logout', function (req, res, next) {
@@ -62,6 +62,8 @@ app.use('/login', ifNotLoggedIn, require('./routes/login'));
 const isLoggedIn = require('./middlewares/isLoggedIn');
 app.use('/admin', isLoggedIn, require('./routes/admin'));
 app.use('/shop', isLoggedIn, require('./routes/shop'));
+
+app.use('/main', require('./routes/main'));
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
