@@ -6,39 +6,28 @@
     <title>Add Product</title>
     <link rel="stylesheet" href="/styles/navbar.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/styles/cartstyle.css">
     <style>
-        .pagination {
-            font-size: 24px;
-            width: 200px;
-            margin: auto;
-        }
-
         .productsList {
             display: flex;
+            overflow: scroll;
         }
 
         .productItem {
             padding: 5px;
             margin: 10px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
 
 <body>
     {{> navbar isAdmin=isAdmin}}
-    {{> addToCartSideView cartCount=cartCount}}
 
     <div class="container">
         <div class="msg">{{msg}}</div>
 
-        {{> shopProducts products=products}}
-
-        <div class="pagination">
-            <a href="/shop/products-list?limit=3&offset=0">1</a>
-            <a href="/shop/products-list?limit=3&offset=3">2</a>
-            <a href="/shop/products-list?limit=3&offset=6">3</a>
-            <a href="/shop/products-list?limit=3&offset=9">4</a>
-        </div>
+        {{> monsoonproducts products=products}}
 
         <script src="/js/addToCart.js"></script>
     </div>

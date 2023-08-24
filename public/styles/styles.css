@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-.container{
+.container {
     margin-top: 60px;
 }
 
@@ -12,16 +12,16 @@
 .price,
 .description,
 .image,
-.submitBtn{
+.submitBtn {
     font-size: 20px;
     padding: 5px;
 }
 
-.cartName{
+.cartName {
     position: relative;
 }
 
-.cartCount{
+.cartCount {
     position: absolute;
     font-size: 12px;
     top: -9px;
@@ -35,7 +35,7 @@
     padding-left: 5px;
 }
 
-.sideView{
+.sideView {
     position: fixed;
     top: 45px;
     right: 0;
@@ -47,7 +47,19 @@
     transition: width 1s;
 }
 
-.showCart{
+.showCart {
     width: 400px;
 }
 
+.imageUrl {
+    height: 65%;
+    width: 100%;
+}
+
+.productList{
+    height: 400px;
+}
+
+.productItem{
+    width: 20%;
+}

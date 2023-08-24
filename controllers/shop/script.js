@@ -10,7 +10,7 @@ module.exports.getProfile = (req, res, next) => {
 
 module.exports.getProducts = async (req, res, next) => {
     try {
-        let products = await Products.find({});
+        let products = await Products.find({}).limit(3);
         res.render('shop/products', {
             products,
             isAdmin: req.user.isAdmin,
@@ -48,6 +48,45 @@ module.exports.getAddToCart = async (req, res, next) => {
             msg: "Item Added Successfully",
             cartCount: req.user.cart.length
         });
+    }
+    catch (err) {
+        return next(err);
+    }
+}
+
+module.exports.getCart = async (req, res, next) => {
+    let user = await req.user.populate('cart.id');
+    let userCart = user.cart;
+    res.render('shop/cart', {
+        products: userCart,
+        isAdmin: req.user.isAdmin,
+        cartCount: req.user.cart.length
+    })
+};
+
+module.exports.getProductList = async (req, res, next) => {
+    try {
+        const { limit, offset } = req.query;
+        let products = await Products.find({}).skip(offset).limit(limit);
+        res.render('shop/products', {
+            products,
+            isAdmin: req.user.isAdmin,
+            cartCount: req.user.cart.length
+        })
+    }
+    catch (err) {
+        return next(err);
+    }
+}
+
+module.exports.getShop = async (req, res, next) => {
+    try {
+        let products = await Products.find({});
+        res.render('shop/shop', {
+            products,
+            isAdmin: req.user.isAdmin,
+            cartCount: req.user.cart.length
+        })
     }
     catch (err) {
         return next(err);

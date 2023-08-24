@@ -26,7 +26,6 @@ app.use(flash());
 const upload = multer({});
 app.use(upload.single('image'));
 
-
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,6 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', (req, res, next) => {
+    // console.log(req.user._id);
     if (req.user) return res.redirect('/shop/profile');
     return res.redirect('/login');
 });

@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Taj mahal",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSff8JL9ALjQrQ11mS8MNLOGgyOXjRTJEckCA&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b091"
+    },
+    {
+        "name": "Shah jha",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ccDA0Tl-Ttu18o8rOoIPark-5N0LQaQpjw&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b093"
+    },
+    {
+        "name": "AC",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFU7U2h0umyF0P6E_yhTX45sGgPEQAbGaJ4g&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b095"
+    },
+    {
+        "name": "Cooler",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIkeiwbu6hn5zP31DgzDZ0VnJhRf6jYyC8A&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b096"
+    },
+    {
+        "name": "Rocket",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGr2JUiKBHSIyyVtGRf9kJvkvWRPzZtgoRew&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b097"
+    },
+    {
+        "name": "Zebra",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSff8JL9ALjQrQ11mS8MNLOGgyOXjRTJEckCA&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b098"
+    },
+    {
+        "name": "Abhishek",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSff8JL9ALjQrQ11mS8MNLOGgyOXjRTJEckCA&usqp=CAU",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64de604252b439c791c4b090"
+    }
+]

@@ -1,6 +1,6 @@
 <nav class="navbar">
-    <a class="navItem" href="#">SHOP</a>
-    <a class="navItem" href="#">Profile</a>
+    <a class="navItem" href="/shop">SHOP</a>
+    <a class="navItem" href="/shop/profile">Profile</a>
     <a class="navItem" href="/shop/products">Products</a>
 
     {{#if this.isAdmin}}
@@ -8,7 +8,7 @@
     <a class="navItem" href="/admin/add-product">Add Products</a>
     {{/if}}
 
-    <a href="#">
+    <a class="navItem" href="/shop/getcart">
         <span class="cartName">
             CART
             {{#if cartCount}}
