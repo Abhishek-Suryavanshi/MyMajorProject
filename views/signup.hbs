@@ -4,18 +4,31 @@
 <head>
     {{> meta}}
     <title>SignUp</title>
+    <link rel="stylesheet" href="/styles/signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-   
-    <div class="msg">{{msg}}</div>
-    <h1>SignUp Page</h1>
 
-    <form action="/signup" class="loginLocal" method="POST">
-        <input type="text" placeholder="Enter Username" name="username"><br>
-        <input type="password" placeholder="Enter Password" name="password"><br>
-        <button type="submit">SignUp</button>
-    </form>
+    <div class="signupContainer">
+        <h1>SignUp Here</h1>
+
+        <div class="msg">{{msg}}</div>
+
+        <form action="/signup" class="loginLocal" method="POST" class="form">
+            <input type="text" placeholder="Enter Username" name="username" class="inp username"><br>
+            <input type="password" placeholder="Enter Password" name="password" class="inp password"><br>
+            <button class="btn btn-primary mybtn" type="submit">SignUp</button>
+            <h6>Already a User ? <a href="/login" class="link2">Login</a></h6>
+        </form>
+
+    </div>
+
+    <script src="/js/signup.js"></script>
 </body>
 
 </html>

@@ -65,6 +65,10 @@ app.use('/shop', isLoggedIn, require('./routes/shop'));
 
 app.use('/main', require('./routes/main'));
 
+app.get('*', (req, res) => {
+    res.render('error');
+});
+
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         app.listen(PORT, () => {
