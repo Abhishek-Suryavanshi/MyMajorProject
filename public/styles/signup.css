@@ -34,8 +34,16 @@ h1 {
     width: 70%;
     height: 30px;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 4px;
     margin-right: 70px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-color: white;
+}
+
+.inp:focus {
+    border: 2px solid blue;
 }
 
 .inp::placeholder {
