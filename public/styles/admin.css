@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+.productItem {
+    position: sticky;
+    top: 40px;
+}
+

@@ -11,10 +11,35 @@ module.exports.getProfile = (req, res, next) => {
 module.exports.getProducts = async (req, res, next) => {
     try {
         let products = await Products.find({}).limit(3);
+        // let limit = 3;
+        // // console.log(products.length);
+
+        // // let x = products.length / 3;
+        // let remaining = products.length % limit;
+        // // console.log(products.length-remaining);
+        // let no_of_pages = (products.length - remaining) / limit;  // 3, remaining vale products vala page hatke 3 page hai
+
+        // let offset = [];
+
+        // let temp = 0;
+        // for (let i = 0; i < no_of_pages + 1; i += 1) {   //Agar last page m jo page hai jo limit se kam hai to sare utha lega
+        //     if (i == 0) {
+        //         offset.push(temp)
+        //     }
+        //     else {
+        //         temp += limit;
+        //         offset.push(temp);
+        //     }
+        // }
+
+        // console.log(offset);  //offset agaya ab 
+
         res.render('shop/products', {
             products,
             isAdmin: req.user.isAdmin,
-            cartCount: req.user.cart.length
+            cartCount: req.user.cart.length,
+            // offset,
+            // limit
         })
     }
     catch (err) {

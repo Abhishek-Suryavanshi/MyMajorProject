@@ -26,10 +26,15 @@ app.use(flash());
 const upload = multer({});
 app.use(upload.single('image'));
 
+const blockHelper = require('./functions/blockHelpers');
+
+blockHelper.pagination;
+
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(__dirname + '/views/partials');
+
 require('dotenv').config()
 
 app.use(session({
