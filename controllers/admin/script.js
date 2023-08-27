@@ -49,11 +49,29 @@ module.exports.getProducts = async (req, res, next) => {
         let products = await Products.find({ userId: req.user._id });
         res.render('admin/products', {
             products,
-            isAdmin:req.user.isAdmin,
+            isAdmin: req.user.isAdmin,
             cartCount: req.user.cart.length
         });
     }
     catch (err) {
         return next(err);
     }
+}
+
+module.exports.deleteProduct = async (req, res, next) => {
+    const { productId } = req.body;
+    // console.log(productId);
+
+    try {
+        await Products.deleteOne({ _id: productId });
+
+        let data = await Products.find({});
+        // console.log(data);
+        res.send(data);
+    }
+    catch (err) {
+        return next(err);
+    }
+
+    // res.send("Haa chalri hai bhai delete request");
 }

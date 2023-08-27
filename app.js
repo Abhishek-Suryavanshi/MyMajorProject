@@ -9,6 +9,8 @@ const flash = require('connect-flash');
 const passport = require('./auth/passport');
 const hbs = require('hbs');
 const multer = require('multer');
+const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 
 app.use(flash());
 
@@ -32,8 +34,10 @@ blockHelper.pagination;
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 hbs.registerPartials(__dirname + '/views/partials');
+app.use(methodOverride('_method'));
 
 require('dotenv').config()
 

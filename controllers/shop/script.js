@@ -13,7 +13,7 @@ module.exports.getProducts = async (req, res, next) => {
         let products = await Products.find({}).limit(3);
         // let limit = 3;
         // // console.log(products.length);
-
+        
         // // let x = products.length / 3;
         // let remaining = products.length % limit;
         // // console.log(products.length-remaining);
@@ -40,7 +40,7 @@ module.exports.getProducts = async (req, res, next) => {
             cartCount: req.user.cart.length,
             // offset,
             // limit
-        })
+        });
     }
     catch (err) {
         return next(err);

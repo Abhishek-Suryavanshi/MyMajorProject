@@ -5,7 +5,9 @@
     {{> meta}}
     <title>Add Product</title>
     <link rel="stylesheet" href="/styles/navbar.css">
-    <link rel="stylesheet" href="/styles/admin.css">
+    {{!--
+    <link rel="stylesheet" href="/styles/admin.css"> --}}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +17,10 @@
         <div class="msg">{{msg}}</div>
 
         {{> adminProducts products=products}}
+
     </div>
+
+    <script src="/js/admin/deleteProduct.js"></script>
 </body>
 
 </html>
