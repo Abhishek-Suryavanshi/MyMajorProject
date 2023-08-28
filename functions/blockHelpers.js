@@ -9,9 +9,17 @@ module.exports.pagination = hbs.registerHelper('pagination', function (offset, l
     // console.log(options.hash.limit);
     console.log(offset);
     console.log(limit);
-    
+
     offset.map((element, indx) => {
-        str += `<a href="/shop/products-list?limit=${limit}&offset=${element}">${indx + 1}</a>`;
+        if (indx == 0) {
+            str += `<a href="/shop/products-list?limit=${limit}&offset=${element}">Previous</a>`;
+        }
+        else if (indx == offset.length - 1) {
+            str += `<a href="/shop/products-list?limit=${limit}&offset=${element}">Next</a>`;
+        }
+        else {
+            str += `<a href="/shop/products-list?limit=${limit}&offset=${element}">${indx - 1}</a>`;
+        }
     });
 
     // const html = parser.parseFromString(str, 'text/html');

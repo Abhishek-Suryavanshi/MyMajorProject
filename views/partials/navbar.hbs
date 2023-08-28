@@ -1,16 +1,16 @@
 <nav class="navbar">
-    <a class="navItem" href="/shop">SHOP</a>
-    <a class="navItem" href="/shop/profile">Profile</a>
-    <a class="navItem" href="/shop/products">Products</a>
+    <a class="navItem" href="/shop"><i class="fa-solid fa-shop">Shop</i></a>
+    <a class="navItem" href="/shop/profile"><i class="fa-solid fa-user">Profile</i></a>
+    <a class="navItem" href="/shop/products"><i class="fa-brands fa-product-hunt">Products</i></a>
 
     {{#if this.isAdmin}}
-    <a class="navItem" href="/admin/products">Admin Products</a>
-    <a class="navItem" href="/admin/add-product">Add Products</a>
+    <a class="navItem" href="/admin/products"><i class="fa-solid fa-lock">Admin Products</i></a>
+    <a class="navItem" href="/admin/add-product"><i class="fa-solid fa-plus">Add Products</i></a>
     {{/if}}
 
     <a class="navItem" href="/shop/getcart">
         <span class="cartName">
-            CART
+            <i class="fa-solid fa-cart-shopping">CART</i>
             {{#if cartCount}}
             <span class="cartCount">{{cartCount}}</span>
             {{else}}
@@ -19,6 +19,6 @@
         </span>
     </a>
 
-    <a class="navItem" href="/logout">Logout</a>
+    <a class="navItem" href="/logout"><i class="fa-solid fa-right-from-bracket">Logout</i></a>
 
 </nav>

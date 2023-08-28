@@ -15,23 +15,36 @@
     {{> navbar isAdmin=isAdmin}}
     {{> addToCartSideView cartCount=cartCount}}
 
-    <div class="container">
+    <div class="mycontainer">
         <div class="msg">{{msg}}</div>
 
         {{> shopProducts products=products}}
 
+        {{!-- <div class="pagination">
+
+            <a href="/shop/products-list?limit=4&offset=3">2</a>
+            <a href="/shop/products-list?limit=4&offset=6">3</a>
+            <a href="/shop/products-list?limit=4&offset=9">4</a>
+        </div> --}}
+
         <div class="pagination">
-            <a href="/shop/products-list?limit=3&offset=0">1</a>
-            <a href="/shop/products-list?limit=3&offset=3">2</a>
-            <a href="/shop/products-list?limit=3&offset=6">3</a>
-            <a href="/shop/products-list?limit=3&offset=9">4</a>
+            <li class="page-item"> <a class="page-link" href="/shop/products-list?limit=4&offset=0">1</a></li>
+            <li class="page-item" aria-current="page">
+                <a class="page-link" href="/shop/products-list?limit=4&offset=3">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/shop/products-list?limit=4&offset=6">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="/shop/products-list?limit=4&offset=9">4</a>
+            </li>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-            crossorigin="anonymous"></script>
-        <script src="/js/addToCart.js"></script>
     </div>
+
+    <script src="https://kit.fontawesome.com/24fc2554cd.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="/js/addToCart.js"></script>
 </body>
 
 </html>

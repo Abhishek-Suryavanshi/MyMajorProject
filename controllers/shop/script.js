@@ -10,10 +10,10 @@ module.exports.getProfile = (req, res, next) => {
 
 module.exports.getProducts = async (req, res, next) => {
     try {
-        let products = await Products.find({}).limit(3);
+        let products = await Products.find({}).limit(4);
         // let limit = 3;
         // // console.log(products.length);
-        
+
         // // let x = products.length / 3;
         // let remaining = products.length % limit;
         // // console.log(products.length-remaining);

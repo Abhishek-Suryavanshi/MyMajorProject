@@ -63,18 +63,20 @@ module.exports.deleteProduct = async (req, res, next) => {
     // console.log(productId);
 
     try {
-        //Get the public_id of image from cloudinary url
-        let splitar = imageUrl.split('/');
-        // console.log(splitar[splitar.length-1]);
+        if (imageUrl) {
+            //Get the public_id of image from cloudinary url
+            let splitar = imageUrl.split('/');
+            // console.log(splitar[splitar.length-1]);
 
-        let public_id = splitar[splitar.length - 1].split('.')[0];
-        // console.log(public_id);
+            let public_id = splitar[splitar.length - 1].split('.')[0];
+            // console.log(public_id);
 
-        //Now use the cloudinary api to delete this image
-        cloudinary.uploader.destroy(public_id)
-            .then((result) => {
-                console.log(result.result);
-            })
+            //Now use the cloudinary api to delete this image
+            cloudinary.uploader.destroy(public_id)
+                .then((result) => {
+                    console.log(result.result);
+                })
+        }
 
         await Products.deleteOne({ _id: productId });
 

@@ -6,6 +6,10 @@
 
 .productsList {
     display: flex;
+    justify-content: center;
+    height: 75%;
+    margin-top: 40px;
+    justify-content: space-evenly;
 }
 
 .productItem {
@@ -13,4 +17,19 @@
     margin: 10px;
     border-radius: 10px;
     border: 2px solid black;
+    padding: 10px;
+}
+
+.mycontainer {
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+    height: 88vh;
+    margin-top: 6px;
+}
+
+.pagination{
+    margin:auto;
+    margin-top:20px;
 }
