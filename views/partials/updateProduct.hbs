@@ -1,11 +1,12 @@
 <div class="product">
-    <form action="/admin/update-product?_method=PUT" class="updateProduct" method="POST">
+    <form action="/admin/update-product?_method=PUT" class="updateProduct" method="POST" enctype="multipart/form-data">
         <input type="text" class="name" name="name" value="{{product.name}}"><br>
         Upload Image: <input type="file" class="image" name="image"><br>
         <input type="text" class="price" name="price" value="{{product.price}}"><br>
-        <textarea type="text" class="description" name="description" value="{{product.description}}">
-            </textarea><br>
+        <input type="text" class="description" name="description" value="{{product.description}}">
         <input type="hidden" name="imageUrl" value="{{product.imageUrl}}">
+        <input type="hidden" name="productId" value="{{product._id}}">
+        <br>
 
         <button type="submit" class="submitBtn">Update Product</button>
     </form>
