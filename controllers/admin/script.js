@@ -59,10 +59,23 @@ module.exports.getProducts = async (req, res, next) => {
 }
 
 module.exports.deleteProduct = async (req, res, next) => {
-    const { productId } = req.body;
+    const { productId, imageUrl } = req.body;
     // console.log(productId);
 
     try {
+        //Get the public_id of image from cloudinary url
+        let splitar = imageUrl.split('/');
+        // console.log(splitar[splitar.length-1]);
+
+        let public_id = splitar[splitar.length - 1].split('.')[0];
+        // console.log(public_id);
+
+        //Now use the cloudinary api to delete this image
+        cloudinary.uploader.destroy(public_id)
+            .then((result) => {
+                console.log(result.result);
+            })
+
         await Products.deleteOne({ _id: productId });
 
         let data = await Products.find({});
@@ -97,8 +110,9 @@ module.exports.getUpdateProduct = async (req, res, next) => {
 
 module.exports.putUpdateProduct = async (req, res, next) => {
     try {
-        const { name, description, price, imageUrl } = req.body;
-        // console.log(productId, " ", name, " ", price, " ", description);
+        const { name, description, price, imageUrl, productId } = req.body;
+        // console.log(req.file);
+        // console.log(name, " ", price, " ", description);
         // console.log(imageUrl);
 
         //Get the public_id of image from cloudinary url
@@ -107,10 +121,36 @@ module.exports.putUpdateProduct = async (req, res, next) => {
 
         let public_id = splitar[splitar.length - 1].split('.')[0];
         // console.log(public_id);
-        
 
+        //Now use the cloudinary api to delete this image
+        cloudinary.uploader.destroy(public_id)
+            .then((result) => {
+                console.log(result.result);
+            })
 
-        res.send("OK");
+        //Now update or replace the details
+        const parser = new DatauriParser();
+        cloudinary.uploader.upload(parser.format('.png', req.file.buffer).content, async (error, result) => {
+            // console.log("Result: ", result);
+            try {
+                await Products.updateOne(
+                    { _id: productId },
+                    {
+                        name,
+                        price,
+                        description,
+                        imageUrl: result.url,
+                        userId: req.user._id
+                    })
+                res.redirect('/admin/products');
+            }
+            catch (err) {
+                return next(err);
+            }
+            // res.send("OK");
+        });
+
+        // res.send("OK");
     }
     catch (err) {
         return next(err);
