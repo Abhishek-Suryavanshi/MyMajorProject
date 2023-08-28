@@ -75,3 +75,44 @@ module.exports.deleteProduct = async (req, res, next) => {
 
     // res.send("Haa chalri hai bhai delete request");
 }
+
+module.exports.getUpdateProduct = async (req, res, next) => {
+    const { productId } = req.query;
+    try {
+        // console.log(productId);
+        let product = await Products.findOne({ _id: productId });
+        // console.log(product);
+        // console.log(product.imageUrl);
+        res.render('admin/updateProduct', {
+            product,
+            isAdmin: req.user.isAdmin,
+            cartCount: req.user.cart.length
+        });
+        // res.send("OK");
+    }
+    catch (err) {
+        return next(err);
+    }
+}
+
+module.exports.putUpdateProduct = async (req, res, next) => {
+    try {
+        const { name, description, price, imageUrl } = req.body;
+        // console.log(productId, " ", name, " ", price, " ", description);
+        // console.log(imageUrl);
+
+        //Get the public_id of image from cloudinary url
+        let splitar = imageUrl.split('/');
+        // console.log(splitar[splitar.length-1]);
+
+        let public_id = splitar[splitar.length - 1].split('.')[0];
+        // console.log(public_id);
+        
+
+
+        res.send("OK");
+    }
+    catch (err) {
+        return next(err);
+    }
+}

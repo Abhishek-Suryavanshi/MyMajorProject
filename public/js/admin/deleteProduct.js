@@ -12,6 +12,8 @@ function updateProductList(data) {
         <div class="description">${product.description}</div>
 
         <button productId="${product._id}" class=" mybtn">Delete Item</button>
+        <button><a href='/admin/update-product?productId=${product._id}' class="updateLink">Update Item</a></button>
+
     </div>`;
     });
 
