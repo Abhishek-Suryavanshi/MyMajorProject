@@ -1,13 +1,34 @@
-<div class="product">
+<div class="formContainer">
     <form action="/admin/update-product?_method=PUT" class="updateProduct" method="POST" enctype="multipart/form-data">
-        <input type="text" class="name" name="name" value="{{product.name}}"><br>
-        Upload Image: <input type="file" class="image" name="image"><br>
-        <input type="text" class="price" name="price" value="{{product.price}}"><br>
-        <input type="text" class="description" name="description" value="{{product.description}}">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input type="text" class="form-control name" name="name" placeholder="Enter Name" aria-label="Username"
+                aria-describedby="basic-addon1" value="{{product.name}}">
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload Image</label>
+            <input type="file" name="image" class="form-control image" id="inputGroupFile01">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Price</span>
+            <input type="text" class="form-control price" name="price" placeholder="Enter Price" aria-label="Username"
+                aria-describedby="basic-addon1" value="{{product.price}}">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text">Description</span>
+            <textarea type="text" class="form-control description" name="description" placeholder="Enter Description"
+                aria-label="With textarea">{{product.description}}</textarea>
+        </div>
+
         <input type="hidden" name="imageUrl" value="{{product.imageUrl}}">
         <input type="hidden" name="productId" value="{{product._id}}">
         <br>
 
-        <button type="submit" class="submitBtn">Update Product</button>
+        {{!-- <button type="submit" class="submitBtn">Update Product</button> --}}
+        <button type="submit" class="btn btn-outline-dark submitBtn">Update Product</button>
     </form>
 </div>
