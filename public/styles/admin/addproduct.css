@@ -1,0 +1,86 @@
+.mycontainer {
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+    height: 88vh;
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    /* margin: 60px auto; */
+    width: 60%;
+    height: 70%;
+    /* border: 1px solid black; */
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+    /* align-content: flex-start; */
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+input {
+    width: 70%;
+    height: 45px;
+    margin: 10px;
+    border-radius: 4px;
+    margin-right: 70px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-color: lightsteelblue;
+}
+
+input:focus {
+    border: 2px solid blue;
+}
+
+input::placeholder {
+    text-align: center;
+    font-style: italic;
+}
+
+textarea {
+    width: 70%;
+    height: 80px;
+    margin: 10px;
+    border-radius: 4px;
+    margin-right: 70px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-color: lightsteelblue;
+}
+
+textarea:focus {
+    border: 2px solid blue;
+}
+
+textarea::placeholder {
+    text-align: center;
+    font-style: italic;
+}
+
+label {
+    color: #B4886B;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-style: italic;
+    width: 130px;
+    font-size: large;
+    /* float: left; */
+}
+
+label:after {
+    content: ": "
+}
