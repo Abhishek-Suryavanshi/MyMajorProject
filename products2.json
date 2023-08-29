@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Shoes-2",
+        "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    },
+    {
+        "name": "Medicines",
+        "imageUrl": "https://images.unsplash.com/photo-1568386453619-84c3ff4b43c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2R1Y3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    },
+    {
+        "name": "Butter",
+        "imageUrl": "https://images.unsplash.com/photo-1525904097878-94fb15835963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2R1Y3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    },
+    {
+        "name": "Non-Veg",
+        "imageUrl": "https://media.istockphoto.com/id/1438426028/photo/usda-choice-beef-rib-eye-steaks-for-sale-at-a-supermarket.webp?b=1&s=170667a&w=0&k=20&c=6YCS5RVp1QuBH1hWsh-6HZU4BRJuBY8VscKEJs1Hp9A=",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    },
+    {
+        "name": "Clothes",
+        "imageUrl": "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2R1Y3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    },
+    {
+        "name": "Shoesss",
+        "imageUrl": "https://media.istockphoto.com/id/170048830/photo/laughing-zebra.jpg?s=1024x1024&w=is&k=20&c=-C8XBSoMa5hpI8ZCHVEEAkN527MqZm2NtakraO4e_9g=https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2R1Y3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    },
+    {
+        "name": "Dove Cream",
+        "imageUrl": "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3RzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "price": 20000,
+        "description": "Awesome Image",
+        "userId": "64dfba60d969e55e960d1ee3"
+    }
+]

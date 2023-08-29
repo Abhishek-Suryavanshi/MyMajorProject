@@ -10,14 +10,17 @@
     height: 75%;
     margin-top: 40px;
     justify-content: space-evenly;
+    font-family: sans-serif;
 }
 
 .productItem {
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 0.5px solid slategrey;
     padding: 10px;
+    height: 100%;
+    box-shadow: 5px 5px 5px slategray;
 }
 
 .mycontainer {
@@ -29,7 +32,29 @@
     margin-top: 6px;
 }
 
-.pagination{
-    margin:auto;
-    margin-top:20px;
+.pagination {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.mybtn {
+    margin-left: 87px;
+}
+
+.name {
+    font-style: italic;
+}
+
+.price {
+    font-style: oblique;
+    font-size: small;
+    font-weight: 600;
+}
+
+.description {
+    font-size: small;
+    font-weight: 100;
+    overflow-y: scroll;
+    height: 50px;
+    text-overflow: clip;
 }

@@ -113,44 +113,59 @@ module.exports.getUpdateProduct = async (req, res, next) => {
 module.exports.putUpdateProduct = async (req, res, next) => {
     try {
         const { name, description, price, imageUrl, productId } = req.body;
-        // console.log(req.file);
-        // console.log(name, " ", price, " ", description);
-        // console.log(imageUrl);
+        if (req.file) {
+            // console.log(req.file);
+            // console.log(name, " ", price, " ", description);
+            // console.log(imageUrl);
 
-        //Get the public_id of image from cloudinary url
-        let splitar = imageUrl.split('/');
-        // console.log(splitar[splitar.length-1]);
+            //Get the public_id of image from cloudinary url
+            let splitar = imageUrl.split('/');
+            // console.log(splitar[splitar.length-1]);
 
-        let public_id = splitar[splitar.length - 1].split('.')[0];
-        // console.log(public_id);
+            let public_id = splitar[splitar.length - 1].split('.')[0];
+            // console.log(public_id);
 
-        //Now use the cloudinary api to delete this image
-        cloudinary.uploader.destroy(public_id)
-            .then((result) => {
-                console.log(result.result);
-            })
+            //Now use the cloudinary api to delete this image
+            cloudinary.uploader.destroy(public_id)
+                .then((result) => {
+                    console.log(result.result);
+                })
 
-        //Now update or replace the details
-        const parser = new DatauriParser();
-        cloudinary.uploader.upload(parser.format('.png', req.file.buffer).content, async (error, result) => {
-            // console.log("Result: ", result);
-            try {
-                await Products.updateOne(
-                    { _id: productId },
-                    {
-                        name,
-                        price,
-                        description,
-                        imageUrl: result.url,
-                        userId: req.user._id
-                    })
-                res.redirect('/admin/products');
-            }
-            catch (err) {
-                return next(err);
-            }
-            // res.send("OK");
-        });
+            //Now update or replace the details
+            const parser = new DatauriParser();
+            cloudinary.uploader.upload(parser.format('.png', req.file.buffer).content, async (error, result) => {
+                // console.log("Result: ", result);
+                try {
+                    await Products.updateOne(
+                        { _id: productId },
+                        {
+                            name,
+                            price,
+                            description,
+                            imageUrl: result.url,
+                            userId: req.user._id
+                        })
+                    res.redirect('/admin/products');
+                }
+                catch (err) {
+                    return next(err);
+                }
+                // res.send("OK");
+            });
+
+        }
+        else {
+            await Products.updateOne(
+                { _id: productId },
+                {
+                    name,
+                    price,
+                    description,
+                    imageUrl,
+                    userId: req.user._id
+                })
+            res.redirect('/admin/products');
+        }
 
         // res.send("OK");
     }

@@ -16,10 +16,12 @@
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 0.5px solid slategray;
     padding: 10px;
-    width:24%;
-    height:400px;
+    width: 24%;
+    height: 400px;
+    box-shadow: 5px 5px 5px slategray;
+    transition: 2s ease-in-out;
 }
 
 .mycontainer {
@@ -31,5 +33,28 @@
     margin-top: 6px;
 }
 
+.updateLink {
+    text-decoration: none;
+}
 
+.name {
+    font-style: italic;
+}
 
+.price {
+    font-style: oblique;
+    font-size: small;
+    font-weight: 600;
+}
+
+.description {
+    font-size: small;
+    font-weight: 100;
+    overflow-y: scroll;
+    height: 50px;
+    text-overflow: clip;
+}
+
+.productTransition {
+    transform: scale(0.1);
+}
