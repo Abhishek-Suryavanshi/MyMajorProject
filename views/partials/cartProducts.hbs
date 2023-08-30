@@ -3,10 +3,13 @@
     <div class="cartItem">
         <img src="{{product.id.imageUrl}}" class="imageUrl">
         <div class="name">{{product.id.name}}</div>
-        <div class="price">{{product.id.price}}</div>
+        <div class="price">Price: {{product.id.price}}</div>
         <div class="description">{{product.id.description}}</div>
+        <br>
+        <div class="quantity">Quantity: {{product.quantity}}</div>
 
-        <button productId={{product._id}} class="removeItem">Remove Item</button>
+        <button type="button" productId={{product._id}} class="btn btn-outline-danger reduceItem">Reduce Item</button>
+
     </div>
     {{/each}}
 </div>

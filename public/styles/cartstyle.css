@@ -14,7 +14,7 @@
     border: 0.5px solid slategray;
     padding: 10px;
     width: 24%;
-    height: 400px;
+    height: 490px;
     box-shadow: 5px 5px 5px slategray;
     transition: 2s ease-in-out;
 }
@@ -44,8 +44,15 @@
     overflow-y: scroll;
     height: 50px;
     text-overflow: clip;
+    border: 1px solid black;
 }
 
 .productTransition {
     transform: scale(0.1);
+}
+
+.reduceItem{
+    position: absolute;
+    margin-left:110px;
+    bottom: 15px;
 }

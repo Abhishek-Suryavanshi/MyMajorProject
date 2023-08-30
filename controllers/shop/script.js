@@ -82,13 +82,12 @@ module.exports.getAddToCart = async (req, res, next) => {
 module.exports.getCart = async (req, res, next) => {
     let user = await req.user.populate('cart.id');
     let userCart = user.cart;
-    console.log(userCart);
+    // console.log(userCart);
     res.render('shop/cart', {
         products: userCart,
         isAdmin: req.user.isAdmin,
-        cartCount: req.user.cart.length,
-        quantity:user
-    })
+        cartCount: req.user.cart.length
+    });
 };
 
 module.exports.getProductList = async (req, res, next) => {
