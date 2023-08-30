@@ -52,7 +52,7 @@
 }
 
 .reduceItem{
-    position: absolute;
+    position: relative;
     margin-left:110px;
     bottom: 15px;
 }

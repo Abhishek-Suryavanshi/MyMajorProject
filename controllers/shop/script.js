@@ -118,3 +118,58 @@ module.exports.getShop = async (req, res, next) => {
         return next(err);
     }
 }
+
+module.exports.postReduceItem = async (req, res, next) => {
+    const { productId } = req.body;
+    // console.log(productId);
+    try {
+        let user = await req.user.populate('cart.id');
+        let userCart = user.cart;
+        // let userCart = req.user.cart;
+        // console.log(userCart);
+        userCart.forEach((product) => {
+            if (product._id == productId) {
+                if (product.quantity >= 1) {
+                    product.quantity -= 1;
+                }
+                else if (product.quantity == 0) {
+                    let newUserCart = userCart.filter((product) => {
+                        if (product._id != productId) {
+                            return true;
+                        }
+                        return false;
+                    });
+                    // console.log(newUserCart);
+                    req.user.cart = newUserCart;
+                }
+            }
+        })
+        // console.log(req.user.cart);
+        await req.user.save();
+
+        res.send(req.user.cart);
+        // let cartProducts = req.user.cart.map(async (product) => {
+        //     try {
+        //         return await Products.findById(product.id);
+        //     }
+        //     catch (err) {
+        //         console.log(err);
+        //     }
+        // });
+
+        // Promise.all(cartProducts)
+        //     .then((cartProducts) => {
+        //         res.send(cartProducts);
+        //     })
+        //     .catch((err) => {
+        //         return next(err);
+        //     })
+        // res.send(cartProducts);
+
+        // res.send("OK");
+    }
+    catch (err) {
+        return next(err);
+    }
+    // res.send("OK");
+}

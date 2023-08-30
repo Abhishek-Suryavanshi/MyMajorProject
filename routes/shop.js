@@ -14,4 +14,6 @@ router.get('/getcart', shopController.getCart);
 
 router.get('/products-list', shopController.getProductList);
 
+router.post('/reduceitem', shopController.postReduceItem);
+
 module.exports = router;
