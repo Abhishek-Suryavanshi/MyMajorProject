@@ -51,8 +51,19 @@
     transform: scale(0.1);
 }
 
-.reduceItem{
+.reduceItem {
     position: relative;
-    margin-left:110px;
+    margin-left: 110px;
     bottom: 15px;
+}
+
+/* .elseh1 {
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bold;
+    color: lightsalmon;
+} */
+
+.elseimg{
+    height:400px;
 }

@@ -58,3 +58,8 @@
 .productTransition {
     transform: scale(0.1);
 }
+
+.elseimg {
+    height: 500px;
+    /* width: 500px; */
+}
