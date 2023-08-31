@@ -1,18 +1,17 @@
 const cartList = document.querySelector('.cartList');
 
 function updateCartList(products) {
-    let str;
+    let str = "";
+    // console.log(products);
     products.forEach(product => {
         str += `<div class="cartItem">
         <img src="${product.id.imageUrl}" class="imageUrl">
         <div class="name">${product.id.name}</div>
         <div class="price">Price: ${product.id.price}</div>
         <div class="description">${product.id.description}</div>
-        <br>
         <div class="quantity">Quantity: ${product.quantity}</div>
-
+        
         <button type="button" productId=${product._id} class="btn btn-outline-danger reduceItem">Reduce Item</button>
-
     </div>`
     });
 

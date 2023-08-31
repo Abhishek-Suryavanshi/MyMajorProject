@@ -123,6 +123,7 @@ module.exports.postReduceItem = async (req, res, next) => {
     const { productId } = req.body;
     // console.log(productId);
     try {
+        // console.log(req.user.cart);
         let user = await req.user.populate('cart.id');
         let userCart = user.cart;
         // let userCart = req.user.cart;
@@ -132,9 +133,9 @@ module.exports.postReduceItem = async (req, res, next) => {
                 if (product.quantity >= 1) {
                     product.quantity -= 1;
                 }
-                else if (product.quantity == 0) {
-                    let newUserCart = userCart.filter((product) => {
-                        if (product._id != productId) {
+                if (product.quantity == 0) {
+                    let newUserCart = userCart.filter((p) => {
+                        if (p._id != productId) {
                             return true;
                         }
                         return false;
@@ -144,9 +145,10 @@ module.exports.postReduceItem = async (req, res, next) => {
                 }
             }
         })
-        // console.log(req.user.cart);
+        console.log(req.user.cart.length);
         await req.user.save();
 
+        // console.log(req.user.cart);
         res.send(req.user.cart);
         // let cartProducts = req.user.cart.map(async (product) => {
         //     try {
