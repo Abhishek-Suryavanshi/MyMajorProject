@@ -3,24 +3,29 @@ const productsList = document.querySelector('.productsList');
 function updateProductList(data) {
     // console.log(data);
     let str = '';
-    data.forEach(product => {
-        // <button productId="${product._id}" imageUrl="${product.imageUrl}" class=" mybtn">Delete Item</button>
-        // <button><a href='/admin/update-product?productId=${product._id}' class="updateLink">Update Item</a></button>
-        str +=
-            `<div class="productItem">
-        <img src="${product.imageUrl}" class="imageUrl">
-        <div class="name">${product.name}</div>
-        <div class="price">${product.price}</div>
-        <div class="description">${product.description}</div>
-
-        <button type="button" class="btn btn-outline-danger mybtn" productId="${product._id}" imageUrl="${product.imageUrl}"
-            >Delete Item</button>
-      
-        <button type="button" class="btn btn-outline-warning"><a href='/admin/update-product?productId=${product._id}'
-         class="updateLink">Update Item</a></button>
-
-    </div>`;
-    });
+    if (data) {
+        data.forEach(product => {
+            // <button productId="${product._id}" imageUrl="${product.imageUrl}" class=" mybtn">Delete Item</button>
+            // <button><a href='/admin/update-product?productId=${product._id}' class="updateLink">Update Item</a></button>
+            str +=
+                `<div class="productItem">
+            <img src="${product.imageUrl}" class="imageUrl">
+            <div class="name">${product.name}</div>
+            <div class="price">${product.price}</div>
+            <div class="description">${product.description}</div>
+    
+            <button type="button" class="btn btn-outline-danger mybtn" productId="${product._id}" imageUrl="${product.imageUrl}"
+                >Delete Item</button>
+          
+            <button type="button" class="btn btn-outline-warning"><a href='/admin/update-product?productId=${product._id}'
+             class="updateLink">Update Item</a></button>
+    
+        </div>`;
+        });
+    }
+    else {
+        str+=``
+    }
 
     productsList.innerHTML = str;
 }

@@ -1,4 +1,5 @@
 <div class="cartList">
+    {{#if products.length}}
     {{#each this.products as |product|}}
     <div class="cartItem">
         <img src="{{product.id.imageUrl}}" class="imageUrl">
@@ -11,4 +12,9 @@
 
     </div>
     {{/each}}
+    {{else}}
+    {{!-- <h1 class="elseh1">Cart is Empty</h1> --}}
+    <img class="elseimg" src="https://gibbonnutrition.com/img/empty-cart-yellow.png" alt="cartEmpty">
+    {{/if}}
+
 </div>

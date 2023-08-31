@@ -1,4 +1,5 @@
 <div class="productsList">
+    {{#if products.length}}
     {{#each this.products as |product|}}
     <div class="productItem">
         <img src="{{product.imageUrl}}" class="imageUrl">
@@ -15,4 +16,9 @@
 
     </div>
     {{/each}}
+    {{else}}
+    <img class="elseimsg" src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg"
+        alt="cartEmpty">
+    {{/if}}
+
 </div>
