@@ -145,7 +145,7 @@ module.exports.postReduceItem = async (req, res, next) => {
                 }
             }
         })
-        console.log(req.user.cart.length);
+        // console.log(req.user.cart.length);
         await req.user.save();
 
         // console.log(req.user.cart);
