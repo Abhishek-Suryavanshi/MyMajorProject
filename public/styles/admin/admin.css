@@ -22,6 +22,7 @@
     height: 400px;
     box-shadow: 5px 5px 5px slategray;
     transition: 2s ease-in-out;
+    background-color: white;
 }
 
 .mycontainer {
@@ -31,6 +32,7 @@
     margin: auto;
     /* height: 88vh; */
     margin-top: 6px;
+    background-color:ghostwhite;
 }
 
 .updateLink {

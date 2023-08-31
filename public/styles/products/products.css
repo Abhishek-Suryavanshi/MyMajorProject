@@ -21,6 +21,7 @@
     padding: 10px;
     height: 100%;
     box-shadow: 5px 5px 5px slategray;
+    background-color: white;
 }
 
 .mycontainer {
@@ -30,6 +31,7 @@
     margin: auto;
     height: 88vh;
     margin-top: 6px;
+    background-color:ghostwhite;
 }
 
 .pagination {
