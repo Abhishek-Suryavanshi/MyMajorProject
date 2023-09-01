@@ -10,7 +10,7 @@ module.exports.getProfile = (req, res, next) => {
         isAdmin: req.user.isAdmin,
         cartCount: req.user.cart.length,
         email: req.user.email,
-        contact: req.user.contactno
+        contact: req.user.contact
     });
 };
 
@@ -180,4 +180,33 @@ module.exports.postReduceItem = async (req, res, next) => {
         return next(err);
     }
     // res.send("OK");
+}
+
+module.exports.getUpdateProfile = (req, res, next) => {
+    // console.log(req.user);
+    // res.send("OK");
+    res.render('updateprofile', {
+        name: req.user.username,
+        isAdmin: req.user.isAdmin,
+        cartCount: req.user.cart.length,
+        email: req.user.email,
+        contact: req.user.contactno
+    });
+}
+
+module.exports.putUpdateProfile = async (req, res, next) => {
+    const { name, email, contact,password } = req.body;
+
+    // console.log(name);
+    // console.log(email);
+    // console.log(contact);
+    // res.send("OK");
+
+    req.user.username = name;
+    req.user.email = email;
+    req.user.contact = contact;
+
+    await req.user.save();
+
+    res.redirect('/shop/profile');
 }

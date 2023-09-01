@@ -8,14 +8,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:ghostwhite;
+    background-color: ghostwhite;
 }
+
 .formContainer {
     /* margin: 60px auto; */
     width: 60%;
     height: 70%;
     /* border: 1px solid black; */
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 form {
@@ -27,4 +28,12 @@ form {
     /* align-content: flex-start; */
     row-gap: 30px;
     column-gap: 30px;
+}
+
+.updateLink {
+    text-decoration: none;
+}
+
+.mybtn:hover .updateLink{
+    color: white;
 }
