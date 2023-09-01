@@ -22,7 +22,9 @@ const userSchema = new Schema({
             },
             quantity: Number
         }
-    ]
+    ],
+    email: String,
+    contact: Number
 });
 
 module.exports = mongoose.model('Users', userSchema);

@@ -1,5 +1,30 @@
 .mycontainer {
-    width: 60%;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
     margin: auto;
-    height:200px;
+    height: 88vh;
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:ghostwhite;
+}
+.formContainer {
+    /* margin: 60px auto; */
+    width: 60%;
+    height: 70%;
+    /* border: 1px solid black; */
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+    /* align-content: flex-start; */
+    row-gap: 30px;
+    column-gap: 30px;
 }

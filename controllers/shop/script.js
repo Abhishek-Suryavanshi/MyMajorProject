@@ -1,10 +1,16 @@
 const Products = require("../../models/Products");
 
 module.exports.getProfile = (req, res, next) => {
+    // console.log(req.user);
+    // req.user.contactno = 999999;
+    // await req.user.save();
+    // console.log(req.user);
     res.render('profile', {
         name: req.user.username,
         isAdmin: req.user.isAdmin,
-        cartCount: req.user.cart.length
+        cartCount: req.user.cart.length,
+        email: req.user.email,
+        contact: req.user.contactno
     });
 };
 
