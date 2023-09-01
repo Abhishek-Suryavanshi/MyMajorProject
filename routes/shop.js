@@ -16,4 +16,7 @@ router.get('/products-list', shopController.getProductList);
 
 router.post('/reduceitem', shopController.postReduceItem);
 
+router.get('/update-profile', shopController.getUpdateProfile);
+router.put('/update-profile', shopController.putUpdateProfile);
+
 module.exports = router;
