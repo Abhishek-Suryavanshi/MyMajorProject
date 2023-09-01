@@ -30,20 +30,27 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        value="{{email}}" name="email">
+                        value="{{email}}" name="email" placeholder="Enter Email-ID">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Contact Number</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        value="{{contact}}" name="contact">
+                        value="{{contact}}" name="contact" placeholder="Enter Contact Number">
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Contact Number</label>
+                    <label for="exampleInputEmail1" class="form-label">Current Password</label>
                     <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        name="password">
+                        name="currentpassword" placeholder="Enter Current Password">
+                    <h6 class="fakemsg">{{fakeusermsg}}</h6>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="newpassword" placeholder="Enter New Password">
                 </div>
 
                 <button type="submit" class="btn btn-outline-primary mybtn">Update</button>

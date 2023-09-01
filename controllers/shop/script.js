@@ -1,4 +1,7 @@
 const Products = require("../../models/Products");
+const User = require('../../models/Users');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 module.exports.getProfile = (req, res, next) => {
     // console.log(req.user);
@@ -190,23 +193,58 @@ module.exports.getUpdateProfile = (req, res, next) => {
         isAdmin: req.user.isAdmin,
         cartCount: req.user.cart.length,
         email: req.user.email,
-        contact: req.user.contactno
+        contact: req.user.contact,
+        fakeusermsg: req.flash('fakeuser')
     });
 }
 
 module.exports.putUpdateProfile = async (req, res, next) => {
-    const { name, email, contact,password } = req.body;
+    try {
+        const { name, email, contact, currentpassword, newpassword } = req.body;
 
-    // console.log(name);
-    // console.log(email);
-    // console.log(contact);
-    // res.send("OK");
+        // console.log(req.user.password);
+        // console.log(name);
+        // console.log(email);
+        // console.log(contact);
+        // res.send("OK");
 
-    req.user.username = name;
-    req.user.email = email;
-    req.user.contact = contact;
+        req.user.username = name;
+        req.user.email = email;
+        req.user.contact = contact;
 
-    await req.user.save();
+        if (currentpassword) {
+            bcrypt.compare(currentpassword, req.user.password).then(function (result) {
+                if (result == false) {
+                    req.flash('fakeuser', 'Current Password is incorrect');
+                    res.redirect('/shop/update-profile');
+                }
+                else {
+                    bcrypt.genSalt(saltRounds, async function (err, salt) {
+                        bcrypt.hash(newpassword, salt, async function (err, hash) {
+                            req.user.password = hash;
+                            await req.user.save();
 
-    res.redirect('/shop/profile');
+                            res.redirect('/shop/profile');
+                        });
+                    });
+                }
+            });
+        }
+        else {
+            await req.user.save();
+            res.redirect('/shop/profile');
+        }
+
+        // bcrypt.genSalt(saltRounds, async function (err, salt) {
+        //     bcrypt.hash(password, salt, async function (err, hash) {
+        //         req.user.password = hash;
+        //         await req.user.save();
+
+        //         res.redirect('/shop/profile');
+        //     });
+        // });
+    }
+    catch (err) {
+        next(err);
+    }
 }

@@ -3,7 +3,7 @@
     border: 1px solid black;
     border-radius: 10px;
     margin: auto;
-    height: 88vh;
+    /* height: 88vh; */
     margin-top: 6px;
     display: flex;
     justify-content: center;
@@ -16,7 +16,9 @@
     width: 60%;
     height: 70%;
     /* border: 1px solid black; */
-    margin-bottom: 100px;
+    /* margin-top: 40px;
+    margin-bottom: 30px; */
+    margin: 30px auto;
 }
 
 form {
@@ -34,6 +36,15 @@ form {
     text-decoration: none;
 }
 
-.mybtn:hover .updateLink{
+.mybtn:hover .updateLink {
     color: white;
+}
+
+input::placeholder {
+    text-align: center;
+    font-style: italic;
+}
+
+.fakemsg {
+    text-align:center;
 }
