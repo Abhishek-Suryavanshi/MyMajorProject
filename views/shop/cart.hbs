@@ -16,10 +16,12 @@
 
     <div class="mycontainer">
 
+        {{#if products.length}}
         <div class="d-grid gap-2">
-            <button class="btn btn-primary mybtn" type="button" name="{{name}}" email="{{email}}"
+            <button class="btn btn-outline-primary mybtn" type="button" name="{{name}}" email="{{email}}"
                 contact="{{contact}}" cartItems="{{products}}">Checkout</button>
         </div>
+        {{/if}}
 
         {{> cartProducts products=products}}
 
