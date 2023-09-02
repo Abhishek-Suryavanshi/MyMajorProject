@@ -27,7 +27,7 @@
     margin: auto;
     /* height: 88vh; */
     margin-top: 6px;
-    background-color:ghostwhite;
+    background-color: ghostwhite;
 }
 
 .name {
@@ -66,6 +66,12 @@
     color: lightsalmon;
 } */
 
-.elseimg{
-    height:400px;
+.elseimg {
+    height: 400px;
+}
+
+.mybtn {
+    margin: auto;
+    width: 50%;
+    margin-top:15px;
 }
