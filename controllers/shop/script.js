@@ -8,6 +8,7 @@ module.exports.getProfile = (req, res, next) => {
     // req.user.contactno = 999999;
     // await req.user.save();
     // console.log(req.user);
+    // console.log(req.user.cart);
     res.render('profile', {
         name: req.user.username,
         isAdmin: req.user.isAdmin,

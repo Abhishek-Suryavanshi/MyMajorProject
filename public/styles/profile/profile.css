@@ -46,5 +46,10 @@ input::placeholder {
 }
 
 .fakemsg {
-    text-align:center;
+    text-align: center;
+}
+
+.paymentStatus {
+    margin: auto;
+    color: red;
 }
