@@ -13,7 +13,8 @@ module.exports.getProfile = (req, res, next) => {
         isAdmin: req.user.isAdmin,
         cartCount: req.user.cart.length,
         email: req.user.email,
-        contact: req.user.contact
+        contact: req.user.contact,
+        paymentStatus: req.flash('payment')
     });
 };
 
@@ -95,7 +96,10 @@ module.exports.getCart = async (req, res, next) => {
     res.render('shop/cart', {
         products: userCart,
         isAdmin: req.user.isAdmin,
-        cartCount: req.user.cart.length
+        cartCount: req.user.cart.length,
+        name: req.user.username,
+        email: req.user.email,
+        contact: req.user.contact
     });
 };
 

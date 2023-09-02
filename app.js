@@ -73,6 +73,7 @@ app.use('/admin', isLoggedIn, require('./routes/admin'));
 app.use('/shop', isLoggedIn, require('./routes/shop'));
 
 app.use('/main', require('./routes/main'));
+app.use('/payment', require('./routes/payment'));
 
 app.get('*', (req, res) => {
     res.render('error');
@@ -81,7 +82,7 @@ app.get('*', (req, res) => {
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`http://localhost:` + PORT);
+            console.log(`http://localhost:` + process.env.PORT);
         });
     })
     .catch((err) => {
