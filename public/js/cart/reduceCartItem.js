@@ -1,4 +1,5 @@
 const cartList = document.querySelector('.cartList');
+const mycontainer = document.querySelector('.mycontainer');
 
 function updateCartList(products) {
     let str = "";

@@ -12,6 +12,9 @@ productsList.addEventListener('click', async (ev) => {
             cartCount.innerText = data.data.cartCount;
             let sideView = document.querySelector('.sideView');
             sideView.classList.toggle('showCart');
+            setTimeout(()=>{
+                sideView.classList.toggle('showCart');
+            },1000);
         }
         catch (err) {
             console.log(err);
